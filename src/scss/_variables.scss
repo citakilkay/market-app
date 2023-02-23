@@ -1,1 +1,32 @@
 $default-font: Arial, Helvetica, sans-serif;
+
+//--FONT-SIZES--
+//xs
+$fs-primary-xs: 2rem;
+$fs-secondary-xs: 1.5rem;
+$fs-tertiary-xs: 1rem;
+$fs-quaternary-xs: 0.5rem;
+//sm
+$fs-primary-sm: 2.5rem;
+$fs-secondary-sm: 2rem;
+$fs-tertiary-sm: 1.5rem;
+$fs-quaternary-sm: 1rem;
+//md
+$fs-primary-md: 3rem;
+$fs-secondary-md: 2.5rem;
+$fs-tertiary-md: 2rem;
+$fs-quaternary-md: 1.5rem;
+// lg
+$fs-primary-lg: 3.5rem;
+$fs-secondary-lg: 3rem;
+$fs-tertiary-lg: 2.5rem;
+$fs-quaternary-lg: 2rem;
+
+//--COLORS--
+//light
+$clr-primary-light: #101010;
+$clr-secondary-light: #404040;
+
+//dark
+$clr-primary-dark: #f0f0f0;
+$clr-secondary-dark: #c0c0c0;
