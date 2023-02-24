@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { Modal } from 'antd';
 
-console.log(process.env, "ilkay")
 const http = axios.create({
     baseURL: process.env.REACT_APP_SERVER_URL,
     timeout: 30000
@@ -24,15 +23,15 @@ http.interceptors.response.use(
         return response;
     },
     error => {
+        console.log(error, "this is my error")
         //Middlewares for error will be added in this scope
-        if (!!error.response && !!error.response.data.error && !!error.response.data.error.message && error.response.data.error.details) {
-
+        if (!!error.response.data.message) {
             Modal.error({
-                title: error.response.data.error.message,
-                content: error.response.data.error.details,
+                title: error.message,
+                content: error.response.data.message,
             });
         }
-        else if (!error.response) {
+        else if (!error.response?.data?.message) {
             Modal.error({ content: 'Bilinmeyen Hata.' });
         }
 

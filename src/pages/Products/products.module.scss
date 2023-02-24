@@ -1,62 +1,129 @@
 @import '../../scss';
 
-.products__title {
+.table__title {
     text-align: center;
 }
 
 @include xs {
-    .light-theme {
-        .products__title {
-            font-size: $fs-primary-xs;
+    .light-theme__products {
+        padding: 0 0.2rem 0.2rem 0.2rem;
+
+        .table {
+            &__title {
+                font-size: $fs-secondary-xs;
+            }
+
+            &__button {
+                margin-right: 0.1rem;
+            }
         }
     }
 
-    .darh-theme {
-        .products__title {
-            font-size: $fs-primary-xs;
+    .dark-theme__products {
+        padding: 0 0.4rem 0.4rem 0.4rem;
+
+        .table {
+            &__title {
+                font-size: $fs-secondary-xs;
+            }
+
+            &__button {
+                margin-right: 0.1rem;
+            }
         }
     }
 }
 
 @include sm {
-    .light-theme {
-        .products__title {
-            font-size: $fs-primary-sm;
+    .light-theme__products {
+        padding: 0 0.6rem 0.6rem 0.6rem;
+
+        .table {
+            &__title {
+                font-size: $fs-secondary-sm;
+            }
+
+            &__button {
+                margin-right: 0.2rem;
+            }
         }
     }
 
-    .darh-theme {
-        .products__title {
-            font-size: $fs-primary-sm;
+    .dark-theme__products {
+        padding: 0 0.6rem 0.6rem 0.6rem;
+
+        .table {
+            &__title {
+                font-size: $fs-secondary-sm;
+            }
+
+            &__button {
+                margin-right: 0.2rem;
+            }
         }
     }
 }
 
 @include md {
-    .light-theme {
-        .products__title {
-            font-size: $fs-primary-md;
+    .light-theme__products {
+        padding: 0 0.8rem 0.8rem 0.8rem;
+
+        .table {
+            &__title {
+                font-size: $fs-secondary-md;
+            }
+
+            &__button {
+                margin-right: 0.3rem;
+            }
         }
     }
 
-    .darh-theme {
-        .products__title {
-            font-size: $fs-primary-md;
+    .darktheme__products {
+        padding: 0 0.8rem 0.8rem 0.8rem;
+
+        .table {
+            &__title {
+                font-size: $fs-secondary-md;
+            }
+
+            &__content {
+                padding: 0.8rem;
+            }
+
+            &__button {
+                margin-right: 0.3rem;
+            }
         }
     }
 }
 
 @include lg {
-    .light-theme {
-        .products__title {
-            font-size: $fs-primary-lg;
+    .lighttheme__products {
+        padding: 0 1rem 1rem 1rem;
+
+        .table {
+            &__title {
+                font-size: $fs-secondary-lg;
+            }
+
+            &__button {
+                margin-right: 0.4rem;
+            }
         }
     }
 
+    .darktheme__products {
+        padding: 0 1rem 1rem 1rem;
 
-    .darh-theme {
-        .products__title {
-            font-size: $fs-primary-lg;
+        .table {
+            &__title {
+                font-size: $fs-secondary-lg;
+            }
+
+            &__button {
+                margin-right: 0.4rem;
+            }
         }
     }
 }

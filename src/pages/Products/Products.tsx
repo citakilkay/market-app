@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Button, Rate, Tooltip } from 'antd'
+import { Button, Rate, Tooltip, Layout } from 'antd'
 import DataTable, { ColumnType } from '../../components/Table/DataTable'
 import { ProductsDtoOutput } from '../../services/product/dto/productsDtoOutput'
 import productService from '../../services/product/productService'
 import s from './products.module.scss'
-import { HeartOutlined, ShoppingOutlined } from '@ant-design/icons'
+import { HeartFilled, ShoppingFilled } from '@ant-design/icons'
+import Navbar from '../../components/Navbar/Navbar'
+
+const { Header, Content, Sider } = Layout;
 
 const Products = () => {
     const [productsData, setProductsData] = useState<any[]>([])
@@ -43,8 +46,10 @@ const Products = () => {
             width: '15%',
             render: (rating: number, rowData: any) => {
                 return (
-                    <Tooltip placement="top" title={rating}>
-                        <Rate key={rowData.id} allowHalf disabled defaultValue={rating} />
+                    <Tooltip key={rowData.id} placement="top" title={rating}>
+                        <span>
+                            <Rate key={rowData.id} allowHalf disabled defaultValue={rating} />
+                        </span>
                     </Tooltip>
                 )
             }
@@ -68,13 +73,13 @@ const Products = () => {
             render: (rowData: any) => {
                 return (
                     <>
-                        <Tooltip placement="top" title={t('add_to_cart')}>
-                            <Button onClick={() => {
-                            }}><ShoppingOutlined /></Button>
+                        <Tooltip key={Math.floor(Math.random() * 99999)} placement="top" title={t('add_to_cart')}>
+                            <Button key={Math.floor(Math.random() * 1000)} size='large' icon={React.createElement(ShoppingFilled)} className={s.table__button} onClick={() => {
+                            }}></Button>
                         </Tooltip>
-                        <Tooltip placement='top' title={t('add_to_favorite')}>
-                            <Button onClick={() => {
-                            }}><HeartOutlined /></Button>
+                        <Tooltip key={Math.floor(Math.random() * 9999)} placement='top' title={t('add_to_favorite')}>
+                            <Button key={Math.floor(Math.random() * 10000)} danger size='large' icon={React.createElement(HeartFilled)} className={s.table__button} onClick={() => {
+                            }}></Button>
                         </Tooltip>
                     </>
                 )
@@ -88,15 +93,17 @@ const Products = () => {
         })
     }, [])
     return (
-        <>
-            <div className='light-theme'>
-                <h1 className={s.products__title}>{t('product_list')}</h1>
-                <div className={s.products__table}>
-                    <DataTable columns={columns} data={productsData} />
-                </div>
+        <Layout className={s.lighttheme__products}>
+            <h4 className={s.table__title}>{t('product_list')}</h4>
+            <div className={s.table__content}>
+                <DataTable columns={columns} data={productsData} />
             </div>
-        </>
-
+            <Sider width={200} style={{
+                background: "#aaa",
+            }}>
+                <Navbar mode='inline' menuItems={[]} selectedKeys={[]} />
+            </Sider>
+        </Layout>
     )
 }
 

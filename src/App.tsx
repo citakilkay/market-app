@@ -1,11 +1,21 @@
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Cookies from 'js-cookie';
 import MyCart from "./pages/MyCart/MyCart";
 import MyFavorites from "./pages/MyFavorites/MyFavorites";
 import Products from "./pages/Products/Products";
 import './scss/common.scss';
+import authService from "./services/auth/authService";
 
 function App() {
+  useEffect(() => {
+    authService.authenticate({
+      username: 'kminchelle',
+      password: '0lelplR'
+    }).then(result => {
+      Cookies.set('token', result.token)
+    })
+  }, [])
   return (
     <>
       <Suspense fallback={null}>

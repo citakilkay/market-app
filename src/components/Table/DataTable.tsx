@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import { Table, TableProps } from 'antd';
+import s from './table.module.scss'
 
 export type ColumnType = {
     key: string;
@@ -16,7 +17,7 @@ type DataTableProps = {
 
 const DataTable: FC<DataTableProps> = ({ columns, data, ...rest }) => {
     return (
-        <div className='light-theme'>
+        <div className={s.lighttheme__datatable}>
             <Table
                 dataSource={data}
                 columns={columns}
