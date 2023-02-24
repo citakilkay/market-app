@@ -1,0 +1,12 @@
+{
+    "product_list": "Ürün Listesi",
+    "price": "Fiyat",
+    "title": "Başlık",
+    "rating": "Puan",
+    "stock": "Adet",
+    "brand": "Marka",
+    "action": "Aksiyon",
+    "description": "Açıklama",
+    "add_to_cart": "Sepete Ekle",
+    "add_to_favorites": "Favorilere Ekle"
+}

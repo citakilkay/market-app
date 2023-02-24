@@ -1,15 +1,13 @@
 import { Suspense } from "react";
-import { useTranslation } from "react-i18next";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import MyCart from "./pages/MyCart/MyCart";
 import MyFavorites from "./pages/MyFavorites/MyFavorites";
 import Products from "./pages/Products/Products";
+import './scss/common.scss';
 
 function App() {
-  const { t } = useTranslation()
   return (
     <>
-
       <Suspense fallback={null}>
         <Router>
           <Routes>

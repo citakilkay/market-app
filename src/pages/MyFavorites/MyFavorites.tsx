@@ -1,8 +1,8 @@
 import React from 'react'
-
+import './myFavorites.module.scss'
 const MyFavorites = () => {
   return (
-    <div>MyFavorites</div>
+    <div className='light-theme'>MyFavorites</div>
   )
 }
 

@@ -1,1 +1,62 @@
-@use '../../scss/index'
+@import '../../scss';
+
+.products__title {
+    text-align: center;
+}
+
+@include xs {
+    .light-theme {
+        .products__title {
+            font-size: $fs-primary-xs;
+        }
+    }
+
+    .darh-theme {
+        .products__title {
+            font-size: $fs-primary-xs;
+        }
+    }
+}
+
+@include sm {
+    .light-theme {
+        .products__title {
+            font-size: $fs-primary-sm;
+        }
+    }
+
+    .darh-theme {
+        .products__title {
+            font-size: $fs-primary-sm;
+        }
+    }
+}
+
+@include md {
+    .light-theme {
+        .products__title {
+            font-size: $fs-primary-md;
+        }
+    }
+
+    .darh-theme {
+        .products__title {
+            font-size: $fs-primary-md;
+        }
+    }
+}
+
+@include lg {
+    .light-theme {
+        .products__title {
+            font-size: $fs-primary-lg;
+        }
+    }
+
+
+    .darh-theme {
+        .products__title {
+            font-size: $fs-primary-lg;
+        }
+    }
+}

@@ -1,9 +1,9 @@
 import axios from 'axios'
-import 'dotenv/config.js';
 import { Modal } from 'antd';
 
+console.log(process.env, "ilkay")
 const http = axios.create({
-    baseURL: process.env.SERVER_APP_URL,
+    baseURL: process.env.REACT_APP_SERVER_URL,
     timeout: 30000
 });
 
@@ -41,4 +41,6 @@ http.interceptors.response.use(
         }, 1000);
     }
 )
+
+export default http
 

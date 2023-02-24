@@ -1,8 +1,9 @@
 import React from 'react'
+import './myCart.module.scss'
 
 const MyCart = () => {
   return (
-    <div></div>
+    <div className='light-theme'></div>
   )
 }
 

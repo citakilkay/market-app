@@ -1,0 +1,12 @@
+{
+    "product_list": "Product List",
+    "price": "Price",
+    "title": "title",
+    "rating": "rating",
+    "stock": "stock",
+    "brand": "Marka",
+    "action": "Action",
+    "description": "Description",
+    "add_to_cart": "Add To Cart",
+    "add_to_favorite": "Add To Favorites"
+}
