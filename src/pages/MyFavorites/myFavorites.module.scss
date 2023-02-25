@@ -1,5 +1,120 @@
-@use '../../scss/index';
+@import '../../scss';
 
-.light-theme {}
+.lighttheme__myfavorites {
+    background-color: #fff !important;
 
-.darh-theme {}
+    .table__title {
+        text-align: center;
+    }
+
+    .table__button {
+        margin-right: 5px;
+    }
+}
+
+.darktheme__myfavorites {
+    background-color: #eee !important;
+
+    .table__title {
+        text-align: center;
+    }
+
+    .table__button {
+        margin-right: 5px;
+    }
+}
+
+@include xs {
+    .lighttheme__myfavorites {
+        padding: 0 0.2rem 0.2rem 0.2rem;
+
+        .table {
+            &__title {
+                font-size: $fs-secondary-xs;
+            }
+        }
+    }
+
+    .darktheme__myfavorites {
+        padding: 0 0.4rem 0.4rem 0.4rem;
+
+        .table {
+            &__title {
+                font-size: $fs-secondary-xs;
+            }
+        }
+    }
+}
+
+@include sm {
+    .lighttheme__myfavorites {
+        padding: 0 0.6rem 0.6rem 0.6rem;
+
+        .table {
+            &__title {
+                font-size: $fs-secondary-sm;
+            }
+        }
+    }
+
+    .darktheme__myfavorites {
+        padding: 0 0.6rem 0.6rem 0.6rem;
+
+        .table {
+            &__title {
+                font-size: $fs-secondary-sm;
+            }
+
+        }
+    }
+}
+
+@include md {
+    .lighttheme__myfavorites {
+        padding: 0 0.8rem 0.8rem 0.8rem;
+
+        .table {
+            &__title {
+                font-size: $fs-secondary-md;
+            }
+        }
+    }
+
+    .darktheme__myfavorites {
+        padding: 0 0.8rem 0.8rem 0.8rem;
+
+        .table {
+            &__title {
+                font-size: $fs-secondary-md;
+            }
+
+            &__content {
+                padding: 0.8rem;
+            }
+
+        }
+    }
+}
+
+@include lg {
+    .lighttheme__myfavorites {
+        padding: 0 1rem 1rem 1rem;
+
+        .table {
+            &__title {
+                font-size: $fs-secondary-lg;
+            }
+
+        }
+    }
+
+    .darktheme__myfavorites {
+        padding: 0 1rem 1rem 1rem;
+
+        .table {
+            &__title {
+                font-size: $fs-secondary-lg;
+            }
+        }
+    }
+}

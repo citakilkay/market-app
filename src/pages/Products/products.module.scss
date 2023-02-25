@@ -1,55 +1,63 @@
 @import '../../scss';
 
-.table__title {
-    text-align: center;
+.lighttheme__products {
+    background-color: #fff !important;
+
+    .table__title {
+        text-align: center;
+    }
+
+    .table__button {
+        margin-right: 5px;
+    }
+}
+
+.darktheme__products {
+    background-color: #eee !important;
+
+    .table__title {
+        text-align: center;
+    }
+
+    .table__button {
+        margin-right: 5px;
+    }
 }
 
 @include xs {
-    .light-theme__products {
+    .lighttheme__products {
         padding: 0 0.2rem 0.2rem 0.2rem;
 
         .table {
             &__title {
                 font-size: $fs-secondary-xs;
             }
-
-            &__button {
-                margin-right: 0.1rem;
-            }
         }
     }
 
-    .dark-theme__products {
+    .darktheme__products {
         padding: 0 0.4rem 0.4rem 0.4rem;
 
         .table {
             &__title {
                 font-size: $fs-secondary-xs;
             }
-
-            &__button {
-                margin-right: 0.1rem;
-            }
         }
     }
 }
 
 @include sm {
-    .light-theme__products {
+    .lighttheme__products {
         padding: 0 0.6rem 0.6rem 0.6rem;
 
         .table {
             &__title {
                 font-size: $fs-secondary-sm;
-            }
-
-            &__button {
-                margin-right: 0.2rem;
             }
         }
     }
 
-    .dark-theme__products {
+    .darktheme__products {
         padding: 0 0.6rem 0.6rem 0.6rem;
 
         .table {
@@ -57,24 +65,17 @@
                 font-size: $fs-secondary-sm;
             }
 
-            &__button {
-                margin-right: 0.2rem;
-            }
         }
     }
 }
 
 @include md {
-    .light-theme__products {
+    .lighttheme__products {
         padding: 0 0.8rem 0.8rem 0.8rem;
 
         .table {
             &__title {
                 font-size: $fs-secondary-md;
-            }
-
-            &__button {
-                margin-right: 0.3rem;
             }
         }
     }
@@ -91,9 +92,6 @@
                 padding: 0.8rem;
             }
 
-            &__button {
-                margin-right: 0.3rem;
-            }
         }
     }
 }
@@ -107,9 +105,6 @@
                 font-size: $fs-secondary-lg;
             }
 
-            &__button {
-                margin-right: 0.4rem;
-            }
         }
     }
 
@@ -119,10 +114,6 @@
         .table {
             &__title {
                 font-size: $fs-secondary-lg;
-            }
-
-            &__button {
-                margin-right: 0.4rem;
             }
         }
     }

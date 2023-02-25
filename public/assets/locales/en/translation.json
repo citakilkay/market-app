@@ -8,5 +8,8 @@
     "action": "Action",
     "description": "Description",
     "add_to_cart": "Add To Cart",
-    "add_to_favorite": "Add To Favorites"
+    "add_to_favorite": "Add To Favorites",
+    "my_favorites": "My Favorites",
+    "my_cart": "My Cart",
+    "remove_from_my_favorite_list": "Remove from my favoritelist"
 }

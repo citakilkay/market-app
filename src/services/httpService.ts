@@ -23,7 +23,6 @@ http.interceptors.response.use(
         return response;
     },
     error => {
-        console.log(error, "this is my error")
         //Middlewares for error will be added in this scope
         if (!!error.response.data.message) {
             Modal.error({

@@ -1,0 +1,15 @@
+@use '../../scss/index';
+
+.lighttheme__sidebar {
+    .sidebar__menu {
+        min-height: 100vh;
+        height: 100%;
+    }
+}
+
+.darktheme__sidebar {
+    .sidebar__menu {
+        min-height: 100vh;
+        height: 100%;
+    }
+}

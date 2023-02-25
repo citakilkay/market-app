@@ -1,5 +1,13 @@
 @use '../../scss/index';
 
-.light-theme__datatable {}
+.lighttheme__datatable {
+    .table__button {
+        margin-right: 5px;
+    }
+}
 
-.darh-theme__datatable {}
+.darhtheme__datatable {
+    .table__button {
+        margin-right: 5px;
+    }
+}
