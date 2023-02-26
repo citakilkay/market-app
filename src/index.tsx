@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "./i18n/index";
+import 'antd/dist/reset.css';
+import { createStoreHook } from 'react-redux';
+import rootReducer from './redux/stores';
+import { applyMiddleware } from '@reduxjs/toolkit';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

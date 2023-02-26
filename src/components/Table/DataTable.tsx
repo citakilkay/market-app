@@ -18,7 +18,7 @@ type DataTableProps = {
 const DataTable: FC<DataTableProps> = ({ columns, data, ...rest }) => {
     return (
         <div className={s.lighttheme__datatable}>
-            <Table
+            <Table {...rest}
                 dataSource={data}
                 columns={columns}
                 pagination={{

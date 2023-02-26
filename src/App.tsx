@@ -1,13 +1,15 @@
 import { Suspense, useEffect } from "react";
+import { Provider } from "react-redux";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import MyCart from "./pages/MyCart/MyCart";
 import MyFavorites from "./pages/MyFavorites/MyFavorites";
 import Products from "./pages/Products/Products";
 import './scss/common.scss';
+import store from "./redux/stores"; 
 
 function App() {
   return (
-    <>
+    <Provider store={store}>
       <Suspense fallback={null}>
         <Router>
           <Routes>
@@ -17,8 +19,7 @@ function App() {
           </Routes>
         </Router>
       </Suspense>
-
-    </>
+    </Provider>
   );
 }
 

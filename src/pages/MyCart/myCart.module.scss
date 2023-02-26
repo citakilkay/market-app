@@ -1,5 +1,99 @@
-@use '../../scss/index';
+@import '../../scss';
 
-.lighttheme__mycart {}
+.lighttheme__mycart {
+    .mycart {
+        &__title {
+            text-align: center;
+        }
+    }
+}
 
 .darktheme__mycart {}
+
+@include xs {
+    .lighttheme__mycart {
+        padding: 0 0.2rem 0.2rem 0.2rem;
+
+        .mycart {
+            &__title {
+                font-size: $fs-secondary-xs;
+            }
+        }
+    }
+
+    .darktheme__mycart {
+        padding: 0 0.2rem 0.2rem 0.2rem;
+
+        .mycart {
+            &__title {
+                font-size: $fs-secondary-xs;
+            }
+        }
+    }
+}
+
+@include sm {
+    .lighttheme__mycart {
+        padding: 0 0.4rem 0.4rem 0.4rem;
+
+        .mycart {
+            &__title {
+                font-size: $fs-secondary-sm;
+            }
+        }
+    }
+
+    .darktheme__mycart {
+        padding: 0 0.4rem 0.4rem 0.4rem;
+
+        .mycart {
+            &__title {
+                font-size: $fs-secondary-sm;
+            }
+        }
+    }
+}
+
+@include md {
+    .lighttheme__mycart {
+        padding: 0 0.6rem 0.6rem 0.6rem;
+
+        .mycart {
+            &__title {
+                font-size: $fs-secondary-md;
+            }
+        }
+    }
+
+    .darktheme__mycart {
+        padding: 0 0.6rem 0.6rem 0.6rem;
+
+        .mycart {
+            &__title {
+                font-size: $fs-secondary-md;
+            }
+        }
+    }
+}
+
+@include lg {
+    .lighttheme__mycart {
+        padding: 0 0.8rem 0.8rem 0.8rem;
+
+        .mycart {
+            &__title {
+                font-size: $fs-secondary-lg;
+            }
+        }
+    }
+
+    .darktheme__mycart {
+        padding: 0 0.8rem 0.8rem 0.8rem;
+
+        .mycart {
+            &__title {
+                font-size: $fs-secondary-lg;
+            }
+        }
+    }
+}

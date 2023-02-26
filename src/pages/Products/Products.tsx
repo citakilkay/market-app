@@ -8,12 +8,33 @@ import s from './products.module.scss'
 import { HeartFilled, ShoppingFilled } from '@ant-design/icons'
 import SidebarMenu from '../../components/SidebarMenu/SidebarMenu'
 import { ProductDtoOutput } from '../../services/product/dto/productDtoOutput'
+import { useAppDispatch } from '../../redux/stores'
+import { addToMyFavorites, removeFromMyFavorites } from '../../features/myFavorites/myFavorites.slice'
+import { addToMyCart, removeFromMyCart } from '../../features/myCart/myCart.slice'
 
 const { Header, Content, Sider } = Layout;
 
 const Products = () => {
     const [productsData, setProductsData] = useState<ProductDtoOutput[]>([])
     const { t } = useTranslation()
+
+    const dispatch = useAppDispatch()
+    const handleAddToMyCart = () => {
+        dispatch(addToMyCart(1))
+    }
+
+    const handleRemoveFromMyCart = () => {
+        dispatch(removeFromMyCart(1))
+    }
+
+    const handleAddToMyFavorites = () => {
+        dispatch(addToMyFavorites(1))
+    }
+
+    const handleRemoveFromMyFavorites = () => {
+        dispatch(removeFromMyFavorites(1))
+    }
+
     const columns: ColumnType[] = [
         {
             key: 'title',
@@ -79,7 +100,7 @@ const Products = () => {
                             }}></Button>
                         </Tooltip>
                         <Tooltip placement='top' title={t('add_to_favorite')}>
-                            <Button danger size='large' icon={React.createElement(HeartFilled)} className={s.table__button} onClick={() => {
+                            <Button danger size='middle' icon={React.createElement(HeartFilled)} className={s.table__button} onClick={() => {
                             }}></Button>
                         </Tooltip>
                     </>

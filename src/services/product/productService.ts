@@ -13,6 +13,15 @@ class ProductService {
         const response = await http.get(`/${id}`)
         return response.data
     }
+
+    async getProductByIds(ids: number[]): Promise<ProductDtoOutput[]> {
+        const products: ProductDtoOutput[] = []
+        ids.forEach(async (id) => {
+            const response = await http.get(`/${id}`)
+            products.push(response.data)
+        })
+        return products
+    }
 }
 
 export default new ProductService()
