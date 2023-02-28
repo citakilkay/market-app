@@ -1,15 +1,28 @@
-@use '../../scss/index';
+@import '../../scss/index';
 
 .lighttheme__sidebar {
-    .sidebar__menu {
-        min-height: 100vh;
-        height: 100%;
+
+    .sidebar {
+        &__menu {
+            min-height: 100vh;
+            height: 100%;
+        }
+
+        &__tag {
+            margin-left: 5px;
+        }
     }
 }
 
 .darktheme__sidebar {
-    .sidebar__menu {
-        min-height: 100vh;
-        height: 100%;
+    .sidebar {
+        &__menu {
+            min-height: 100vh;
+            height: 100%;
+        }
+
+        &__tag {
+            margin-left: 5px;
+        }
     }
 }

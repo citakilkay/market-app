@@ -1,16 +1,19 @@
 import React, { FC, useState } from "react";
-import { Menu } from 'antd'
+import { Menu, MenuProps, Tag } from 'antd'
 import s from './sidebarMenu.module.scss'
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { BarsOutlined, HeartOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { useAppSelector } from "../../redux/stores";
 
 const SidebarMenu = () => {
     const [selectedMenuItem, setSelectedMenuItem] = useState<string>('/products')
     const navigate = useNavigate()
     const { t } = useTranslation()
 
-    const items = [
+    const { myCart, myFavorites, common } = useAppSelector(state => state)
+
+    const items: MenuProps['items'] = [
         {
             key: '/',
             label: t('product_list'),
@@ -22,12 +25,17 @@ const SidebarMenu = () => {
             icon: React.createElement(HeartOutlined)
         }, {
             key: '/my-cart',
-            label: t('my_cart'),
+            label: <div>
+                <span>
+                    {t('my_cart')}
+                </span>
+                <Tag className={s.sidebar__tag} color="warning">${myCart.cartTotalPrice}</Tag>
+            </div>,
             icon: React.createElement(ShoppingCartOutlined)
         }
     ]
     return (
-        <div className={s.lighttheme__sidebar}>
+        <div className={common.darkmode ? s.darktheme__sidebar : s.lighttheme__sidebar}>
             <Menu theme='dark' mode='inline' items={items} className={s.sidebar__menu} activeKey={selectedMenuItem} onSelect={(e) => { setSelectedMenuItem(e.key); navigate(e.key) }} />
         </div>
     );

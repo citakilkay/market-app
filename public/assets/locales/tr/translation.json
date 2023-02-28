@@ -14,7 +14,10 @@
     "remove_from_my_favorites": "Favorilerimden Kaldır",
     "remove_from_cart": "Sepetten Kaldır",
     "added_to_cart": "Sepete Eklendi",
-    "removed_to_cart": "Sepetten Kaldırıldı",
+    "removed_from_cart": "Sepetten Kaldırıldı",
     "added_to_my_favorites": "Favorilerime Eklendi",
-    "removed_from_my_favorites": "Favorilerimden Kaldırıldı"
+    "removed_from_my_favorites": "Favorilerimden Kaldırıldı",
+    "turkish": "Türkçe",
+    "english": "İngilizce",
+    "select_darkMode": "Gece Modu"
 }

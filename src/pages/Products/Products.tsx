@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Button, Rate, Tooltip, Layout, message } from 'antd'
+import { Button, Rate, Tooltip, Layout, message, Select } from 'antd'
 import DataTable, { ColumnType } from '../../components/Table/DataTable'
 import { ProductsDtoOutput } from '../../services/product/dto/productsDtoOutput'
 import productService from '../../services/product/productService'
@@ -11,6 +11,7 @@ import { ProductDtoOutput } from '../../services/product/dto/productDtoOutput'
 import { useAppDispatch, useAppSelector } from '../../redux/stores'
 import { addToMyFavorites, removeFromMyFavorites } from '../../redux/features/myFavorites/myFavorites.slice'
 import { addToMyCart, removeFromMyCart } from '../../redux/features/myCart/myCart.slice'
+import HeaderMenu from '../../components/HeaderMenu/HeaderMenu'
 
 const { Header, Content, Sider } = Layout;
 
@@ -18,7 +19,7 @@ const Products = () => {
     const [productsData, setProductsData] = useState<ProductDtoOutput[]>([])
     const { t } = useTranslation()
 
-    const { myCart, myFavorites } = useAppSelector(state => state)
+    const { myCart, myFavorites, common } = useAppSelector(state => state)
 
     const dispatch = useAppDispatch()
     const handleAddToMyCart = (id: number, price: number) => {
@@ -135,12 +136,15 @@ const Products = () => {
         })
     }, [])
     return (
-        <Layout className='lighttheme'>
+        <Layout className={common.darkmode ? s.darktheme__products : s.lighttheme__products}>
             <Sider className='sider__content'>
                 <SidebarMenu />
             </Sider>
             <Layout>
-                <Content className={s.lighttheme__products}>
+                <Header className={s.products__header}>
+                    <HeaderMenu />
+                </Header>
+                <Content className={s.products__content}>
                     <h4 className={s.table__title}>{t('product_list')}</h4>
                     <div className={s.table__content}>
                         <DataTable columns={columns} data={productsData} />

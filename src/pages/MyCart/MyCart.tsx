@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Button, Rate, Tooltip, Layout, message } from 'antd'
+import { Button, Rate, Tooltip, Layout, message, Select } from 'antd'
 import SidebarMenu from '../../components/SidebarMenu/SidebarMenu'
 import s from './myCart.module.scss'
 import CardCustom, { CustomCardProps } from '../../components/CardCustom/CardCustom'
@@ -10,20 +10,22 @@ import { addToMyFavorites, removeFromMyFavorites } from '../../redux/features/my
 import productService from '../../services/product/productService'
 import { ProductDtoOutput } from '../../services/product/dto/productDtoOutput'
 import { CloseSquareFilled, HeartFilled } from '@ant-design/icons'
+import LanguageSelect from '../../components/LanguageSelect/LanguageSelect'
+import HeaderMenu from '../../components/HeaderMenu/HeaderMenu'
 
-const { Content, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 
 const MyCart = () => {
+
   const [productsInMyCart, setProductsInMyCart] = useState<ProductDtoOutput[]>([])
   const [propsOfProductCards, setPropsOfProductCards] = useState<CustomCardProps[]>([])
 
-
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const dispatch = useAppDispatch()
-  const { myCart, myFavorites } = useAppSelector(state => state)
+  const { myCart, myFavorites, common } = useAppSelector(state => state)
 
   const handleRemoveFromMyCart = (id: number, price: number) => {
-    dispatch(removeFromMyCart(id, price))
+    dispatch(removeFromMyCart({ id, price }))
     message.open({
       type: 'success',
       content: t('removed_from_cart')
@@ -69,7 +71,6 @@ const MyCart = () => {
     setPropsOfProductCards(productsCardPropsArray)
   }
 
-
   useEffect(() => {
     getProductsInMyCart()
   }, [myCart])
@@ -80,7 +81,10 @@ const MyCart = () => {
         <SidebarMenu />
       </Sider>
       <Layout>
-        <Content className={s.lighttheme__mycart}>
+        <Content className={common.darkmode ? s.darktheme__mycart : s.lighttheme__mycart}>
+          <Header className={s.mycart__header}>
+            <HeaderMenu />
+          </Header>
           <h4 className={s.mycart__title}>{t('my_cart')}</h4>
           <div className={s.mycart__content}>
             {

@@ -9,12 +9,20 @@
         &__content {
             display: flex;
             justify-content: space-around;
+            padding: 5px;
             flex-wrap: wrap;
         }
+
+        &__header {
+            background-color: $bg-primary-light;
+        }
     }
+
 }
 
 .darktheme__mycart {
+    background-color: $bg-tertiary-dark;
+
     .mycart {
         &__title {
             text-align: center;
@@ -23,27 +31,35 @@
         &__content {
             display: flex;
             justify-content: space-around;
+            padding: 5px;
+            flex-wrap: wrap;
+            ;
+        }
+
+        &__header {
+            background-color: $bg-primary-dark;
         }
     }
 }
 
 @include xs {
     .lighttheme__mycart {
-        padding: 0 0.2rem 0.2rem 0.2rem;
 
         .mycart {
             &__title {
                 font-size: $fs-secondary-xs;
             }
+
+            &__content {}
         }
-    }
 
-    .darktheme__mycart {
-        padding: 0 0.2rem 0.2rem 0.2rem;
+        .darktheme__mycart {
 
-        .mycart {
-            &__title {
-                font-size: $fs-secondary-xs;
+
+            .mycart {
+                &__title {
+                    font-size: $fs-secondary-xs;
+                }
             }
         }
     }
@@ -51,61 +67,61 @@
 
 @include sm {
     .lighttheme__mycart {
-        padding: 0 0.4rem 0.4rem 0.4rem;
+
 
         .mycart {
             &__title {
                 font-size: $fs-secondary-sm;
             }
+
         }
     }
 
     .darktheme__mycart {
-        padding: 0 0.4rem 0.4rem 0.4rem;
 
         .mycart {
             &__title {
                 font-size: $fs-secondary-sm;
             }
+
         }
     }
 }
 
 @include md {
     .lighttheme__mycart {
-        padding: 0 0.6rem 0.6rem 0.6rem;
-
         .mycart {
             &__title {
                 font-size: $fs-secondary-md;
             }
+
         }
     }
 
     .darktheme__mycart {
-        padding: 0 0.6rem 0.6rem 0.6rem;
 
         .mycart {
             &__title {
                 font-size: $fs-secondary-md;
             }
+
         }
     }
 }
 
 @include lg {
     .lighttheme__mycart {
-        padding: 0 0.8rem 0.8rem 0.8rem;
 
         .mycart {
             &__title {
                 font-size: $fs-secondary-lg;
             }
+
         }
     }
 
     .darktheme__mycart {
-        padding: 0 0.8rem 0.8rem 0.8rem;
+
 
         .mycart {
             &__title {

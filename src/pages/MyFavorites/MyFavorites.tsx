@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Button, Rate, Tooltip, Layout, message } from 'antd'
+import { Button, Rate, Tooltip, Layout, message, Select } from 'antd'
 import DataTable, { ColumnType } from '../../components/Table/DataTable'
 import { ProductsDtoOutput } from '../../services/product/dto/productsDtoOutput'
 import productService from '../../services/product/productService'
@@ -11,14 +11,16 @@ import { ProductDtoOutput } from '../../services/product/dto/productDtoOutput'
 import { useAppDispatch, useAppSelector } from '../../redux/stores'
 import { addToMyCart, removeFromMyCart } from '../../redux/features/myCart/myCart.slice'
 import { removeFromMyFavorites } from '../../redux/features/myFavorites/myFavorites.slice'
+import LanguageSelect from '../../components/LanguageSelect/LanguageSelect'
+import HeaderMenu from '../../components/HeaderMenu/HeaderMenu'
 
-const { Content, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 
 const MyFavorites = () => {
   const [productsInMyFavorites, setProductsInMyFavorites] = useState<ProductDtoOutput[]>([])
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
-  const { myFavorites, myCart } = useAppSelector(state => state)
+  const { myFavorites, myCart, common } = useAppSelector(state => state)
 
   const handleRemoveFromMyCart = (id: number, price: number) => {
     dispatch(removeFromMyCart({ id, price }))
@@ -29,7 +31,7 @@ const MyFavorites = () => {
   }
 
   const handleAddToMyCart = (id: number, price: number) => {
-    dispatch(addToMyCart(id, price))
+    dispatch(addToMyCart({ id, price }))
     message.open({
       type: 'success',
       content: t('added_to_cart')
@@ -53,7 +55,6 @@ const MyFavorites = () => {
 
   useEffect(() => {
     getProductsInMyFavorites()
-    console.log(productsInMyFavorites, "productsInMy")
   }, [myFavorites])
   const columns: ColumnType[] = [
     {
@@ -136,7 +137,10 @@ const MyFavorites = () => {
         <SidebarMenu />
       </Sider>
       <Layout>
-        <Content className={s.lighttheme__myfavorites}>
+        <Header className={s.myFavorites__header}>
+          <HeaderMenu />
+        </Header>
+        <Content className={common.darkmode ? s.darktheme__myfavorites : s.lighttheme__myfavorites}>
           <h4 className={s.table__title}>{t('my_favorites')}</h4>
           <div className={s.table__content}>
             <DataTable columns={columns} data={productsInMyFavorites} />

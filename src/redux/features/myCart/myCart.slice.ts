@@ -6,7 +6,7 @@ export interface MyCart {
     cartTotalPrice: number
 }
 
-interface productData {
+interface ProductData {
     id: number
     price: number
 }
@@ -21,13 +21,13 @@ const myCartSlice = createSlice({
     name: 'myCart',
     initialState,
     reducers: {
-        addToMyCart: (state, action: PayloadAction<productData>) => {
+        addToMyCart: (state, action: PayloadAction<ProductData>) => {
             state.productIds.push(action.payload.id)
             state.cartTotalPrice = state.cartTotalPrice + action.payload.price
             localStorage.setItem('cartTotalPrice', JSON.stringify(state.cartTotalPrice))
             localStorage.setItem('myCartProcuductIds', JSON.stringify(state.productIds))
         },
-        removeFromMyCart: (state, action: PayloadAction<productData>) => {
+        removeFromMyCart: (state, action: PayloadAction<ProductData>) => {
             state.productIds = state.productIds.filter(i => i != action.payload.id)
             state.cartTotalPrice = state.cartTotalPrice - action.payload.price
             localStorage.setItem('cartTotalPrice', JSON.stringify(state.cartTotalPrice))

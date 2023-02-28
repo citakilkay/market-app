@@ -1,46 +1,88 @@
 @import '../../scss';
 
 .lighttheme__products {
-    background-color: #fff !important;
+    background-color: $bg-secondary-light;
 
-    .table__title {
-        text-align: center;
+    .products {
+        &__content {
+            background-color: $bg-secondary-light;
+        }
+
+        &__header {
+            background-color: $bg-primary-light;
+        }
     }
 
-    .table__button {
-        margin-right: 5px;
+
+
+    .table {
+
+        &__title {
+            text-align: center;
+        }
+
+        &__button {
+            margin-right: 5px;
+        }
+
+        &__content {
+            padding: 0.8rem;
+        }
     }
 }
 
 .darktheme__products {
-    background-color: #eee !important;
+    background-color: $bg-primary-dark;
 
-    .table__title {
-        text-align: center;
+    .products {
+        &__content {
+            background-color: $bg-secondary-dark;
+        }
+
+        &__header {
+            background-color: $bg-primary-dark;
+        }
     }
 
-    .table__button {
-        margin-right: 5px;
+    .table {
+
+        &__title {
+            text-align: center;
+        }
+
+        &__button {
+            margin-right: 5px;
+        }
+
+        &__content {
+            padding: 0.8rem;
+        }
     }
 }
 
 @include xs {
     .lighttheme__products {
-        padding: 0 0.2rem 0.2rem 0.2rem;
 
         .table {
             &__title {
                 font-size: $fs-secondary-xs;
             }
+
+            &__content {
+                padding: 0.4rem;
+            }
         }
     }
 
     .darktheme__products {
-        padding: 0 0.4rem 0.4rem 0.4rem;
 
         .table {
             &__title {
                 font-size: $fs-secondary-xs;
+            }
+
+            &__content {
+                padding: 0.4rem;
             }
         }
     }
@@ -48,21 +90,27 @@
 
 @include sm {
     .lighttheme__products {
-        padding: 0 0.6rem 0.6rem 0.6rem;
 
         .table {
             &__title {
                 font-size: $fs-secondary-sm;
             }
+
+            &__content {
+                padding: 0.6rem;
+            }
         }
     }
 
     .darktheme__products {
-        padding: 0 0.6rem 0.6rem 0.6rem;
 
         .table {
             &__title {
                 font-size: $fs-secondary-sm;
+            }
+
+            &__content {
+                padding: 0.6rem;
             }
 
         }
@@ -71,17 +119,19 @@
 
 @include md {
     .lighttheme__products {
-        padding: 0 0.8rem 0.8rem 0.8rem;
 
         .table {
             &__title {
                 font-size: $fs-secondary-md;
             }
+
+            &__content {
+                padding: 0.8rem;
+            }
         }
     }
 
     .darktheme__products {
-        padding: 0 0.8rem 0.8rem 0.8rem;
 
         .table {
             &__title {
@@ -98,22 +148,27 @@
 
 @include lg {
     .lighttheme__products {
-        padding: 0 1rem 1rem 1rem;
 
         .table {
             &__title {
                 font-size: $fs-secondary-lg;
             }
 
+            &__content {
+                padding: 0.8rem;
+            }
         }
     }
 
     .darktheme__products {
-        padding: 0 1rem 1rem 1rem;
 
         .table {
             &__title {
                 font-size: $fs-secondary-lg;
+            }
+
+            &__content {
+                padding: 0.8rem;
             }
         }
     }

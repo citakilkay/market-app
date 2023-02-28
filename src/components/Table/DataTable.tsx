@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { Table, TableProps } from 'antd';
 import s from './table.module.scss'
+import { useAppSelector } from '../../redux/stores';
 
 export type ColumnType = {
     key: string;
@@ -17,12 +18,13 @@ type DataTableProps = {
 
 const DataTable: FC<DataTableProps> = ({ columns, data, ...rest }) => {
 
+    const { common } = useAppSelector(state => state)
     return (
-        <div className={s.lighttheme__datatable}>
+        <div className={common.darkmode ? s.darktheme__datatable : s.lighttheme__datatable}>
             <Table {...rest}
-                onChange={() => {
-                    console.log(data, "dataonchange")
-                }}
+
+                className={s.table__root}
+                rootClassName={s.table__root}
                 dataSource={data}
                 columns={columns}
                 pagination={{

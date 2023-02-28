@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
-export interface myFavorites {
+export interface MyFavorites {
     productIds: number[]
     userId: number
 }
 
-const initialState: myFavorites = {
+const initialState: MyFavorites = {
     productIds: JSON.parse(localStorage.getItem('myFavoritesProcuductIds') || "[]"),
     userId: 0
 }

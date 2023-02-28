@@ -1,4 +1,4 @@
-@use '../../scss/index';
+@import '../../scss';
 
 .lighttheme__datatable {
     .table__button {
@@ -6,8 +6,11 @@
     }
 }
 
-.darhtheme__datatable {
-    .table__button {
-        margin-right: 5px;
+.darktheme__datatable {
+    .table {
+
+        &__button {
+            margin-right: 5px;
+        }
     }
 }

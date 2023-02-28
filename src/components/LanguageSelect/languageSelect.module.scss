@@ -1,0 +1,19 @@
+@import '../../scss/index';
+
+.lighttheme__languageselect {
+    display: inline-block;
+
+    .dropdown__content {
+        width: 120px;
+        margin-right: 1rem;
+    }
+}
+
+.darktheme__languageselect {
+    display: inline-block;
+
+    .dropdown__content {
+        width: 120px;
+        margin-right: 1rem;
+    }
+}
