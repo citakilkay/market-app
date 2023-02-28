@@ -1,5 +1,77 @@
-@use '../../scss/index';
+@import '../../scss/index';
 
-.lighttheme__card {}
+.lighttheme__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25%;
+    min-width: 10rem;
+    margin: 0.5rem;
 
-.darktheme__card {}
+    .card {
+        &__cover {
+            border-radius: 8px 8px 0 0;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position-x: center;
+        }
+    }
+}
+
+.darktheme__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25%;
+    min-width: 10rem;
+    margin: 0.5rem;
+
+    .card {
+        &__cover {
+            border-radius: 8px 8px 0 0;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position-x: center;
+        }
+    }
+}
+
+@include xs {
+    .lighttheme__card {
+        .card {}
+    }
+
+    .darktheme__card {}
+}
+
+@include sm {
+    .lighttheme__card {}
+
+    .darktheme__card {}
+}
+
+@include md {
+    .lighttheme__card {}
+
+    .darktheme__card {}
+}
+
+@include lg {
+    .lighttheme__card {
+
+
+        .card {
+            &__cover {
+                height: 15rem;
+            }
+        }
+    }
+
+    .darktheme__card {
+        .card {
+            &__cover {
+                height: 15rem;
+            }
+        }
+    }
+}

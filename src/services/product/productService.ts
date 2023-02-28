@@ -10,17 +10,8 @@ class ProductService {
     }
 
     async get(id: number): Promise<ProductDtoOutput> {
-        const response = await http.get(`/${id}`)
+        const response = await http.get(`/products/${id}`)
         return response.data
-    }
-
-    async getProductByIds(ids: number[]): Promise<ProductDtoOutput[]> {
-        const products: ProductDtoOutput[] = []
-        ids.forEach(async (id) => {
-            const response = await http.get(`/${id}`)
-            products.push(response.data)
-        })
-        return products
     }
 }
 

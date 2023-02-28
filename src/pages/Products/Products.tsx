@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Button, Rate, Tooltip, Layout } from 'antd'
+import { Button, Rate, Tooltip, Layout, message } from 'antd'
 import DataTable, { ColumnType } from '../../components/Table/DataTable'
 import { ProductsDtoOutput } from '../../services/product/dto/productsDtoOutput'
 import productService from '../../services/product/productService'
@@ -8,9 +8,9 @@ import s from './products.module.scss'
 import { HeartFilled, ShoppingFilled } from '@ant-design/icons'
 import SidebarMenu from '../../components/SidebarMenu/SidebarMenu'
 import { ProductDtoOutput } from '../../services/product/dto/productDtoOutput'
-import { useAppDispatch } from '../../redux/stores'
-import { addToMyFavorites, removeFromMyFavorites } from '../../features/myFavorites/myFavorites.slice'
-import { addToMyCart, removeFromMyCart } from '../../features/myCart/myCart.slice'
+import { useAppDispatch, useAppSelector } from '../../redux/stores'
+import { addToMyFavorites, removeFromMyFavorites } from '../../redux/features/myFavorites/myFavorites.slice'
+import { addToMyCart, removeFromMyCart } from '../../redux/features/myCart/myCart.slice'
 
 const { Header, Content, Sider } = Layout;
 
@@ -18,21 +18,39 @@ const Products = () => {
     const [productsData, setProductsData] = useState<ProductDtoOutput[]>([])
     const { t } = useTranslation()
 
+    const { myCart, myFavorites } = useAppSelector(state => state)
+
     const dispatch = useAppDispatch()
-    const handleAddToMyCart = () => {
-        dispatch(addToMyCart(1))
+    const handleAddToMyCart = (id: number, price: number) => {
+        dispatch(addToMyCart({ id, price }))
+        message.open({
+            type: 'success',
+            content: t('added_to_cart')
+        })
     }
 
-    const handleRemoveFromMyCart = () => {
-        dispatch(removeFromMyCart(1))
+    const handleRemoveFromMyCart = (id: number, price: number) => {
+        dispatch(removeFromMyCart({ id, price }))
+        message.open({
+            type: 'success',
+            content: t('removed_from_cart')
+        })
     }
 
-    const handleAddToMyFavorites = () => {
-        dispatch(addToMyFavorites(1))
+    const handleAddToMyFavorites = (id: number) => {
+        dispatch(addToMyFavorites(id))
+        message.open({
+            type: 'success',
+            content: t('added_to_my_favorites')
+        })
     }
 
-    const handleRemoveFromMyFavorites = () => {
-        dispatch(removeFromMyFavorites(1))
+    const handleRemoveFromMyFavorites = (id: number) => {
+        dispatch(removeFromMyFavorites(id))
+        message.open({
+            type: 'success',
+            content: t('removed_from_my_favorites')
+        })
     }
 
     const columns: ColumnType[] = [
@@ -95,12 +113,14 @@ const Products = () => {
             render: (rowData: any) => {
                 return (
                     <>
-                        <Tooltip placement="top" title={t('add_to_cart')}>
+                        <Tooltip placement="top" title={myCart.productIds.includes(rowData.id) ? t('remove_from_cart') : t('add_to_cart')}>
                             <Button size='middle' icon={React.createElement(ShoppingFilled)} className={s.table__button} onClick={() => {
+                                myCart.productIds.includes(rowData.id) ? handleRemoveFromMyCart(rowData.id, rowData.price) : handleAddToMyCart(rowData.id, rowData.price)
                             }}></Button>
                         </Tooltip>
-                        <Tooltip placement='top' title={t('add_to_favorite')}>
+                        <Tooltip placement='top' title={myFavorites.productIds.includes(rowData.id) ? t('remove_from_my_favorites') : t('add_to_my_favorites')}>
                             <Button danger size='middle' icon={React.createElement(HeartFilled)} className={s.table__button} onClick={() => {
+                                myFavorites.productIds.includes(rowData.id) ? handleRemoveFromMyFavorites(rowData.id) : handleAddToMyFavorites(rowData.id)
                             }}></Button>
                         </Tooltip>
                     </>

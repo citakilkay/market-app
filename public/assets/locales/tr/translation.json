@@ -8,9 +8,13 @@
     "action": "Aksiyon",
     "description": "Açıklama",
     "add_to_cart": "Sepete Ekle",
-    "add_to_favorites": "Favorilere Ekle",
+    "add_to_my_favorites": "Favorilerime Ekle",
     "my_favorites": "Favorilerim",
     "my_cart": "Sepetim",
-    "remove_from_my_favorite_list": "Favorilerimden Kaldır",
-    "remove_from_cart": "Sepetten Kaldır"
+    "remove_from_my_favorites": "Favorilerimden Kaldır",
+    "remove_from_cart": "Sepetten Kaldır",
+    "added_to_cart": "Sepete Eklendi",
+    "removed_to_cart": "Sepetten Kaldırıldı",
+    "added_to_my_favorites": "Favorilerime Eklendi",
+    "removed_from_my_favorites": "Favorilerimden Kaldırıldı"
 }

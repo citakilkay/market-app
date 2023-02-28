@@ -16,9 +16,13 @@ type DataTableProps = {
 } & TableProps<any>;
 
 const DataTable: FC<DataTableProps> = ({ columns, data, ...rest }) => {
+
     return (
         <div className={s.lighttheme__datatable}>
             <Table {...rest}
+                onChange={() => {
+                    console.log(data, "dataonchange")
+                }}
                 dataSource={data}
                 columns={columns}
                 pagination={{

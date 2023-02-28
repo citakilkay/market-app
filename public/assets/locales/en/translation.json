@@ -8,9 +8,9 @@
     "action": "Action",
     "description": "Description",
     "add_to_cart": "Add To Cart",
-    "add_to_favorite": "Add To Favorites",
+    "add_to_my_favorites": "Add To Favorites",
     "my_favorites": "My Favorites",
     "my_cart": "My Cart",
-    "remove_from_my_favorite_list": "Remove from my favorite list",
-    "remove_from_cart": "Sepetten Kaldır"
+    "remove_from_my_favorites": "Remove from my favorite list",
+    "remove_from_cart": "Remove from Cart"
 }
