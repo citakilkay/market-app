@@ -1,10 +1,54 @@
-@use './index' as x;
+@import './index';
+
+//overrides
+.darktheme {
+    .ant-table-tbody {
+        background-color: $bg-tertiary-dark;
+        color: $clr-secondary-dark;
+    }
+
+    .ant-table-thead {
+        background-color: $bg-secondary-dark;
+        color: $clr-primary-dark;
+    }
+
+    th.ant-table-cell {
+        background-color: $bg-secondary-dark !important;
+        color: $clr-primary-dark !important;
+    }
+
+    .ant-table-cell {
+        background-color: $bg-secondary-dark;
+        color: $clr-secondary-dark;
+    }
+}
+
+.lighttheme {
+    .ant-table-tbody {
+        background-color: $bg-secondary-light;
+        color: $clr-secondary-light;
+    }
+
+    .ant-table-thead {
+        background-color: $bg-primary-light;
+        color: $clr-primary-light;
+    }
+
+    .ant-table-cell {
+        background-color: $bg-secondary-light;
+        color: $clr-secondary-light;
+    }
+}
+
+
+
+//customs
 
 html,
 body {
     box-sizing: border-box;
     margin: 0;
-    font-family: x.$default-font;
+    font-family: $default-font;
 }
 
 h1,

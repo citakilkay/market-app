@@ -36,7 +36,7 @@ const SidebarMenu = () => {
     ]
     return (
         <div className={common.darkmode ? s.darktheme__sidebar : s.lighttheme__sidebar}>
-            <Menu theme='dark' mode='inline' items={items} className={s.sidebar__menu} activeKey={selectedMenuItem} onSelect={(e) => { setSelectedMenuItem(e.key); navigate(e.key) }} />
+            <Menu inlineCollapsed={false} theme='dark' mode='inline' items={items} className={s.sidebar__menu} activeKey={selectedMenuItem} onSelect={(e) => { setSelectedMenuItem(e.key); navigate(e.key) }} />
         </div>
     );
 };

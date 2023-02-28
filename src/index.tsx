@@ -4,16 +4,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "./i18n/index";
 import 'antd/dist/reset.css';
-import { createStoreHook } from 'react-redux';
+import { createStoreHook, Provider } from 'react-redux';
 import rootReducer from './redux/stores';
 import { applyMiddleware } from '@reduxjs/toolkit';
+import store from './redux/stores';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
