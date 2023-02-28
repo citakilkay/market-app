@@ -3,6 +3,7 @@
 .lighttheme__mycart {
     .mycart {
         &__title {
+            color: $clr-primary-light;
             text-align: center;
         }
 
@@ -25,6 +26,7 @@
 
     .mycart {
         &__title {
+            color: $clr-primary-dark;
             text-align: center;
         }
 
